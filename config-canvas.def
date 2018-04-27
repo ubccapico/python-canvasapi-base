@@ -1,0 +1,16 @@
+[Base]
+DefaultInstance = 1
+TokenLocation = 
+ConnectAutomatically = True
+
+[Prod]
+TokenFile = prod.txt
+Server = canvas.ubc.ca
+
+[Test]
+TokenFile = test.txt
+Server = ubc.test.instructure.com
+
+[Beta]
+TokenFile = beta.txt
+Server = ubc.beta.instructure.com
