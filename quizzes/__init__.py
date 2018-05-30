@@ -1,8 +1,8 @@
 from CanvasAPI.util import callhelper
-from CanvasAPI.quizzes import questions
+from CanvasAPI.quizzes import questions, groups
 from CanvasAPI import instance
 
-__all__ = ["get", "get_quiz", "questions"]
+__all__ = ["get", "get_quiz", "questions", "groups"]
 
 
 def get(course_id, *args):

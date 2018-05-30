@@ -1,4 +1,4 @@
-import sys, ntpath, csv
+import sys, ntpath, csv, collections
 
 def get_list():
     return_list = []
@@ -27,13 +27,16 @@ def get_list_and_file():
     finally:
         return return_list, return_file
 
-def read_from_csv(csv_file):
+def read_from_csv(csv_file, has_header=False):
     '''Turns a CSV file into a list.'''
     csv_file = csv_file.replace('"', '')
     try:
         return_list = list()
         with open(csv_file) as csvfile:
-            reader = csv.reader(csvfile)
+            if has_header:
+                reader = csv.DictReader(csvfile)
+            else:
+                reader = csv.reader(csvfile)
             for row in reader:
                 return_list.append(row)
             return return_list
@@ -63,6 +66,15 @@ def save_file(data, addname="_output", name=None, prompt=True):
         new_filename = "{}\\{}{}{}".format(head, tail[:len(tail)-4], addname, tail[len(tail)-4:])
         write_to_csv(new_filename, data)
         return new_filename
+
+def get_data(data_types=None):
+    if len(sys.argv) > 1:
+        return read_from_csv(sys.argv[1], False)
+    else:
+        input_list = []
+        for column in data_types:
+            input_list.append(input("{}: ".format(column)))
+        return [input_list]
 
 def get_token(filename):
     '''Opens a file and returns the first line of the file.'''

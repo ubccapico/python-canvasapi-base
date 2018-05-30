@@ -15,10 +15,10 @@ def post(course_id, column_title):
     url_str = "courses/{}/custom_gradebook_columns".format(course_id)
     return instance.call_api(url_str, method="POST", post_fields={"column[title]":column_title})
 
-def put(course_id, column_id, column_title):
+def put(course_id, column_id, post_fields):
     '''Update a custom gradebook column'''
     url_str = "courses/{}/custom_gradebook_columns/{}".format(course_id, column_id)
-    return instance.call_api(url_str, method="PUT", post_fields={"column[title]":column_title})
+    return instance.call_api(url_str, method="PUT", post_fields=post_fields)
 
 def delete(course_id, column_id):
     '''Delete a custom gradebook column'''

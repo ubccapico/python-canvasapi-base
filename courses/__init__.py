@@ -2,7 +2,7 @@ from CanvasAPI.util import callhelper
 from CanvasAPI.courses import settings, users
 from CanvasAPI import instance
 
-__all__ = ["get", "get_sections", "put", "settings", "users"]
+__all__ = ["get", "get_sections", "put", "delete", "settings", "users"]
 
 
 def get(course_id, *args):
@@ -10,10 +10,11 @@ def get(course_id, *args):
     url_str = "courses/{}{}".format(course_id, callhelper.args_to_params(*args))
     return instance.call_api(url_str)
 
+
 def get_sections(course_id, *args):
     '''Gets a course'''
     url_str = "courses/{}/sections{}".format(course_id, callhelper.args_to_params(*args))
-    return instance.call_api(url_str)
+    return instance.all_pages(url_str)
 
 def put(course_id, post_fields, *args):
     '''Updates a course
@@ -109,4 +110,7 @@ def post(account_id, post_fields):
     url_str = "accounts/{}/courses".format(account_id)
     return instance.call_api(url_str, method="POST", post_fields=post_fields)
 
-
+def delete(course_id):
+    '''Deletes a course'''
+    url_str = "courses/{}".format(course_id)
+    return instance.call_api(url_str, method="DELETE")

@@ -1,6 +1,6 @@
 [Base]
 DefaultInstance = 1
-TokenLocation = 
+TokenLocation = C:\Users\tcinkant\tokens
 ConnectAutomatically = True
 
 [Prod]

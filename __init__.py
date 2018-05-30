@@ -95,6 +95,7 @@ else:
     instance = callapi.Instance()
     
 from CanvasAPI import accounts
+from CanvasAPI import admins
 from CanvasAPI import assignments
 from CanvasAPI import courses
 from CanvasAPI import custom_gradebook_columns
@@ -113,6 +114,7 @@ from CanvasAPI import quizzes
 
 __all__ = ['instance',
            'accounts',
+           'admins',
            'assignments',
            'courses',
            'custom_gradebook_columns',
