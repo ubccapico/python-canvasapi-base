@@ -14,9 +14,7 @@ There is an example script included in this project "example.py" that will print
 
 ## Authors
 
-* **Tyler Cinkant** - [Lannro] (https://github.com/Lannro)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Tyler Cinkant** - [Lannro](https://github.com/Lannro)
 
 
 ## License
