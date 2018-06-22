@@ -6,5 +6,5 @@ __all__ = ["get"]
 def get(user_id, *args):
     '''List enrollments'''
     url_str = "users/{}/enrollments{}".format(user_id, callhelper.args_to_params(*args))
-    return instance.call_api(url_str)
+    return instance.all_pages(url_str)
 

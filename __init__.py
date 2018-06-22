@@ -96,9 +96,11 @@ else:
     
 from CanvasAPI import accounts
 from CanvasAPI import admins
+from CanvasAPI import analytics
 from CanvasAPI import assignments
 from CanvasAPI import courses
 from CanvasAPI import custom_gradebook_columns
+from CanvasAPI import enrollment_terms
 from CanvasAPI import enrollments
 from CanvasAPI import external_tools
 from CanvasAPI import favorites
@@ -115,9 +117,11 @@ from CanvasAPI import quizzes
 __all__ = ['instance',
            'accounts',
            'admins',
+           'analytics',
            'assignments',
            'courses',
            'custom_gradebook_columns',
+           'enrollment_terms',
            'enrollments',
            'external_tools',
            'favorites',

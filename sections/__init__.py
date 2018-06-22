@@ -1,7 +1,7 @@
 from CanvasAPI.util import callhelper
 from CanvasAPI import instance
 
-__all__ = ["get", "delete", "cross_list_section"]
+__all__ = ["get", "post", "delete", "cross_list_section"]
 
 
 def get(section_id, *args):
@@ -19,3 +19,8 @@ def cross_list_section(section_id, new_course_id):
     url_str = "sections/{}/crosslist/{}".format(section_id, new_course_id)
     return instance.call_api(url_str, method="POST")
     
+
+def post(course_id, name):
+    '''Create course section'''
+    url_str = "courses/{}/sections".format(course_id)
+    return instance.call_api(url_str, method="POST", post_fields={"course_section[name]":name})
